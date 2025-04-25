@@ -14,6 +14,7 @@ public class mainproj {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, pass);
             System.out.println("CONNECTION ESTABLISHED");
+            conn.setAutoCommit(false);
             Options.optionsavailable();
 
             while (true) {

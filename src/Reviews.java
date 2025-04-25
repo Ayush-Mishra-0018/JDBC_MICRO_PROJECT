@@ -32,7 +32,7 @@ public class Reviews {
             updateStmt.setInt(3, productId);
             updateStmt.executeUpdate();
             updateStmt.close();
-
+            conn.commit();
             System.out.println("REVIEW UPDATED SUCCESSFULLY");
         } else {
             String insertQuery = "insert into review (productid, currentrating, totalreviews) values (?, ?, ?)";
@@ -42,7 +42,7 @@ public class Reviews {
             insertStmt.setInt(3, 1);
             insertStmt.executeUpdate();
             insertStmt.close();
-
+            conn.commit();
             System.out.println("REVIEW ADDED SUCCESSFULLY");
         }
 
